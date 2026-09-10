@@ -1,0 +1,13 @@
+cd C:\Users\chvss\.gemini\antigravity\scratch\skillsprint
+
+# Initialize Git repository
+git init
+git add .
+git commit -m "Initial commit: SkillSprint app with Expo and Vercel configuration"
+git branch -M main
+
+# Link to your new GitHub repo (replace <YOUR_GITHUB_USERNAME>)
+git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/skillsprint.git
+
+# Push code to GitHub
+git push -u origin main
