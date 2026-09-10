@@ -20,6 +20,7 @@ import { ProgressScreen } from '../screens/ProgressScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { TrackDetailScreen } from '../screens/TrackDetailScreen';
 import { LessonScreen } from '../screens/LessonScreen';
+import AdminDashboardScreen from '../screens/AdminDashboardScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -133,6 +134,7 @@ export const AppNavigator = () => {
             <Stack.Screen name="Lesson" component={LessonScreen} />
             <Stack.Screen name="Assessment" component={AssessmentScreen} />
             <Stack.Screen name="AssessmentResults" component={AssessmentResultsScreen} />
+            <Stack.Screen name="AdminDashboard" component={AdminDashboardScreen} />
           </>
         )}
       </Stack.Navigator>

@@ -185,6 +185,42 @@ export const ProfileScreen = ({ navigation }) => {
           </View>
         </View>
 
+        {/* Owner / Admin Portal Access */}
+        <View style={styles.section}>
+          <TouchableOpacity
+            activeOpacity={0.85}
+            onPress={() => navigation.navigate('AdminDashboard')}
+            style={[
+              styles.adminPortalCard,
+              {
+                backgroundColor: isDark ? '#1E1B4B' : '#EEF2FF',
+                borderColor: '#6366F1',
+                borderRadius: borderRadius.xl,
+              },
+            ]}
+          >
+            <View style={styles.adminPortalLeft}>
+              <View style={[styles.adminIconBox, { backgroundColor: '#4F46E5' }]}>
+                <Ionicons name="shield-checkmark" size={22} color="#FFFFFF" />
+              </View>
+              <View style={{ flex: 1 }}>
+                <View style={styles.adminHeaderRow}>
+                  <Text style={[styles.adminPortalTitle, { color: isDark ? '#FFFFFF' : '#1E1B4B' }]}>
+                    Owner & Admin Portal
+                  </Text>
+                  <View style={styles.adminTag}>
+                    <Text style={styles.adminTagText}>OWNER</Text>
+                  </View>
+                </View>
+                <Text style={[styles.adminPortalSub, { color: isDark ? '#C7D2FE' : '#4338CA' }]}>
+                  View all active students, total XP, tracks & KPIs
+                </Text>
+              </View>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color="#6366F1" />
+          </TouchableOpacity>
+        </View>
+
         {/* Preferences Section */}
         <View style={styles.section}>
           <Text
@@ -649,5 +685,52 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 10,
+  },
+  adminPortalCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderWidth: 1.5,
+  },
+  adminPortalLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    flex: 1,
+    paddingRight: 10,
+  },
+  adminIconBox: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  adminHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 2,
+  },
+  adminPortalTitle: {
+    fontSize: 15,
+    fontWeight: '800',
+  },
+  adminTag: {
+    backgroundColor: '#4F46E5',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  adminTagText: {
+    color: '#FFFFFF',
+    fontSize: 9,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  adminPortalSub: {
+    fontSize: 12,
+    fontWeight: '500',
   },
 });
